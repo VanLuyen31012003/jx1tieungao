@@ -1,0 +1,60 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #ffffff;
+  --foreground: #000;
+
+  --background: linear-gradient(to bottom, #ffffff, #233026);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #ffffff;
+    --foreground: #0000;
+  }
+}
+
+body {
+  color: var(--foreground);
+  font-family: "fontTitle", Arial, Helvetica, sans-serif;
+}
+
+.fire {
+  background: url("/assets/fireanimation.png") repeat-x bottom;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: fire 12s linear infinite;
+}
+
+@keyframes fire {
+  0% {
+    background-position: left;
+  }
+
+  100% {
+    background-position: right;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+/* Ẩn thanh scroll bar nhưng vẫn giữ được cuộn ngang */
+.scroll-container {
+  overflow-x: auto;
+  -ms-overflow-style: none; /* Ẩn scrollbar trên IE và Edge */
+  scrollbar-width: none; /* Ẩn scrollbar trên Firefox */
+}
+
+.scroll-container::-webkit-scrollbar {
+  display: none; /* Ẩn thanh scrollbar trên Chrome, Safari */
+}
